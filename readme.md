@@ -178,8 +178,11 @@ The service will be available on `localhost:5000`.
 - The service leverages gRPC reflection for testing with tools like Postman.
 
 ## Steps to use in Postman
-- 1. <img height="50" src="C:\Users\chira\OneDrive - chiragDataEng Pvt Ltd\Documents\gRPC-images\1.png" width="400"/>
+- 1. 
+<img height="50" src="assets/1.png" width="400"/>
    
-- 2. <img height="300" src="C:\Users\chira\OneDrive - chiragDataEng Pvt Ltd\Documents\gRPC-images\2.png" width="600"/>
+- 2. 
+<img height="300" src="assets/2.png" width="600"/>
    
-- 3. <img height="200" src="C:\Users\chira\OneDrive - chiragDataEng Pvt Ltd\Documents\gRPC-images\3.png" width="600"/>
+- 3. 
+<img height="200" src="assets/3.png" width="600"/>
