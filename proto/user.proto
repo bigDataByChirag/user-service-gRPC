@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "user-service-gRPC/gen/proto";
+
+
+
+message Person {
+  string id = 1;
+  string fname = 2;
+  string city = 3;
+  uint64 phone = 4;
+  string height = 5;
+  bool married = 6;
+}
+
+message SignupRequest {
+  string fname = 2;
+  string city = 3;
+  uint64 phone = 4;
+  string height = 5;
+  bool married = 6;
+}
+
+message SignupResponse {
+  Person person = 1;
+}
+
+message SearchUserByIdRequest {
+  string id = 1;
+}
+
+message SearchUserByIdResponse {
+  Person person = 1;
+}
+
+message SearchUsersByIdsRequest {
+  repeated string ids = 1;
+}
+
+message SearchUsersByIdsResponse {
+  repeated Person people = 1;
+}
+
+message GetAllUserIdsRequest {}
+
+message GetAllUserIdsResponse {
+  repeated string ids = 1;
+}
+
+message SearchUsersRequest {
+  string fname = 1;
+  string city = 2;
+  uint64 phone = 3;
+  string height = 4;
+  bool married = 5;
+}
+
+message SearchUsersResponse {
+  repeated Person people = 1;
+}
+
+// gRPC methods
+service UserService {
+
+  rpc Signup(SignupRequest) returns (SignupResponse);
+  rpc SearchUserById(SearchUserByIdRequest) returns (SearchUserByIdResponse);
+  rpc SearchUsersByIds(SearchUsersByIdsRequest) returns (SearchUsersByIdsResponse);
+  rpc GetAllUserIds(google.protobuf.Empty) returns (GetAllUserIdsResponse);
+  rpc SearchUsers(SearchUsersRequest) returns (SearchUsersResponse);
+}
